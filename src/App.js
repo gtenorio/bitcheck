@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import NavBar from './NavBar';
+import MainForm from './MainForm';
 import './App.css';
 
 function App() {
+  let multiplier = 2;
+  let [coinValue, setCoinValue] = useState(1);
+  let [dollarValue, setDollarValue] = useState(coinValue * multiplier);
+
+
+  const onCoinValueChange = (e) => {
+    e.preventDefault();
+    setCoinValue(e.target.value);
+    setDollarValue(Number(e.target.value) * multiplier);
+  }
+
+  const onDollarValueChange = (e) => {
+    e.preventDefault();
+    setDollarValue(e.target.value);
+    setCoinValue(Number(e.target.value) / multiplier);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar></NavBar>
+      <MainForm
+        coinValue={coinValue}
+        dollarValue={dollarValue}
+        onCoinValueChange={onCoinValueChange}
+        onDollarValueChange={onDollarValueChange}
+      ></MainForm>
     </div>
   );
 }
