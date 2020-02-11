@@ -7,7 +7,10 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
 <Router>
-  <Route path={['/', '/:coin/:dollar']}>
+  <Route exact path={'/:coin/:dollar'}>
+    <App />
+  </Route>
+  <Route exact path={'/'}>
     <App />
   </Route>
 </Router>,

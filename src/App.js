@@ -2,18 +2,13 @@ import React, {useState} from 'react';
 import NavBar from './NavBar';
 import MainForm from './MainForm';
 import {
-  BrowserRouter as Router,
-  Route,
-  useParams,
-  Redirect
+  useParams
 } from "react-router-dom";
 import './App.css';
 
 function App() {
   let multiplier = 2;
   let {coin, dollar} = useParams();
-  //TODO fix routing params
-  console.log(coin, dollar)
   const DEFAULT_COIN_SELECT = coin && dollar ? coin : 'btc';
   const DEFAULT_DOLLAR_SELECT = coin && dollar ? dollar : 'usd';
   let [coinValue, setCoinValue] = useState(1);
