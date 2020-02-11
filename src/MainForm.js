@@ -25,18 +25,18 @@ function MainForm({coinValue, dollarValue, onCoinValueChange, onDollarValueChang
       <span id="coin-selector">
         <input type="text" value={coinValue} onChange={onCoinValueChange}/>
         <select id="coin-select" value={coinSelect} onChange={onSelect}>
-          <option value="btc">Bitcoin</option>
-          <option value="ltc">Litecoin</option>
-          <option value="eth">Ethereum</option>
+          <option value="btc">BTC</option>
+          <option value="ltc">LTC</option>
+          <option value="eth">ETH</option>
         </select>
       </span>
       =
       <span id="dollar-selector">
         <input type="text" value={dollarValue} onChange={onDollarValueChange}/>
         <select id="dollar-select" value={dollarSelect} onChange={onSelect}>
-          <option value="usd">US Dollar</option>
-          <option value="eur">Euro</option>
-          <option value="cad">Canadian Dollar</option>
+          <option value="usd">USD</option>
+          <option value="eur">EUR</option>
+          <option value="cad">CAD</option>
         </select>
       </span>
     </div>
